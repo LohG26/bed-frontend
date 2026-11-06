@@ -11,6 +11,7 @@ export default function Navbar() {
 		<section className="h-14 w-screen bg-blue-600 flex items-center">
 			<NavbarLink destination="/" text="Home" />
 			<NavbarLink destination="/users/login" text="Login" />
+			<NavbarLink destination="/users/register" text="Register" />
 		</section>
 	);
 }
