@@ -1,6 +1,6 @@
 function NavbarLink({ destination, text }) {
 	return (
-		<a href={destination} className="text-white hover:text-orange-500">
+		<a href={destination} className="text-white hover:text-orange-500 mx-2.5 font-bold">
 			{text}
 		</a>
 	);
@@ -8,7 +8,7 @@ function NavbarLink({ destination, text }) {
 
 export default function Navbar() {
 	return (
-		<section className="h-20 w-screen bg-blue-600">
+		<section className="h-14 w-screen bg-blue-600 flex items-center">
 			<NavbarLink destination="/" text="Home" />
 			<NavbarLink destination="/users/login" text="Login" />
 		</section>
