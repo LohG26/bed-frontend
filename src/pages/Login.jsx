@@ -26,7 +26,10 @@ export default function Login() {
 			const data = response.headers.get("content-type")?.includes("application/json")
 				? await response.json()
 				: null;
-			if (!response.ok) throw new Error(data?.message || data?.error || "Login failed.");
+			if (!response.ok || data?.success === false) {
+				throw new Error(data?.message || data?.error || "Login failed.");
+			}
+			window.dispatchEvent(new Event("auth-change"));
 			setPassword("");
 			setMessage("Login successful.");
 		} catch (err) {
