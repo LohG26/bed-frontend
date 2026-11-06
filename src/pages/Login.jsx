@@ -17,7 +17,7 @@ export default function Login() {
 		setMessage("");
 
 		try {
-			const response = await fetch("http://localhost:3000/users/login", {
+			const response = await fetch("http://localhost:3000/user/login", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				credentials: "include",
@@ -72,7 +72,7 @@ export default function Login() {
 					{loading ? "Logging in..." : "Login"}
 				</button>
 			</form>
-			<p className="mt-4">No account? <Link to="/users/register" className="text-blue-700 underline">Register</Link></p>
+			<p className="mt-4">No account? <Link to="/user/register" className="text-blue-700 underline">Register</Link></p>
 		</main>
 	);
 }

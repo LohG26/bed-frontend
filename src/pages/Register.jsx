@@ -16,7 +16,7 @@ export default function Register() {
 		setMessage("");
 		setLoading(true);
 		try {
-			const response = await fetch("http://localhost:3000/users/register", {
+			const response = await fetch("http://localhost:3000/user/register", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				credentials: "include",
@@ -62,13 +62,13 @@ export default function Register() {
 					Show password
 				</label>
 				{error && <p role="alert" className="text-red-700">{error}</p>}
-				{message && <p role="status" className="text-green-700">{message} <Link to="/users/login" className="underline">Login</Link></p>}
+				{message && <p role="status" className="text-green-700">{message} <Link to="/user/login" className="underline">Login</Link></p>}
 				<button type="submit" disabled={loading}
 					className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50">
 					{loading ? "Registering..." : "Register"}
 				</button>
 			</form>
-			<p className="mt-4">Already registered? <Link to="/users/login" className="text-blue-700 underline">Login</Link></p>
+			<p className="mt-4">Already registered? <Link to="/user/login" className="text-blue-700 underline">Login</Link></p>
 		</main>
 	);
 }

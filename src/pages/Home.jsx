@@ -11,7 +11,7 @@ export default function Home() {
 		async function loadCurrentUser() {
 			setLoading(true);
 			try {
-				const response = await fetch("http://localhost:3000/users/me", {
+				const response = await fetch("http://localhost:3000/user/me", {
 					credentials: "include",
 				});
 				const data = await response.json();

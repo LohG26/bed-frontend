@@ -11,7 +11,7 @@ export default function Navbar() {
 
 		async function checkAuthentication() {
 			try {
-				const response = await fetch("http://localhost:3000/users/me", {
+				const response = await fetch("http://localhost:3000/user/me", {
 					credentials: "include",
 				});
 				const data = await response.json();
@@ -34,7 +34,7 @@ export default function Navbar() {
 		setLoggingOut(true);
 		setError("");
 		try {
-			const response = await fetch("http://localhost:3000/users/logout", {
+			const response = await fetch("http://localhost:3000/user/logout", {
 				method: "POST",
 				credentials: "include",
 			});
@@ -60,8 +60,8 @@ export default function Navbar() {
 				</button>
 			) : (
 				<>
-					<Link to="/users/login" className="mx-2.5 font-bold text-white hover:text-orange-500">Login</Link>
-					<Link to="/users/register" className="mx-2.5 font-bold text-white hover:text-orange-500">Register</Link>
+					<Link to="/user/login" className="mx-2.5 font-bold text-white hover:text-orange-500">Login</Link>
+					<Link to="/user/register" className="mx-2.5 font-bold text-white hover:text-orange-500">Register</Link>
 				</>
 			)}
 			{error && <span role="alert" className="ml-auto mr-4 text-white">{error}</span>}
